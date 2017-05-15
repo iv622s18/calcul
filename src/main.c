@@ -1,11 +1,10 @@
 #include <stdio.h>
-#include "calc.h"
+#include "func.h"
 
 int main()
 {
 	int i, n, item;
-	printf("1. Plus\n2.Minus\n3.Multiplication\n4.Division\n5.Trigonometry\n 6.Factorial \n 7.Root\n 8.Exponentation
-n \n9. Quit");
+	printf("1. Plus\n2.Minus\n3.Multiplication\n4.Division\n5.Trigonometry\n 6.Factorial \n 7.Root\n 8.Exponentation\n9. Quit");
 	while (item != 9)
 	{	
 		printf("\nInput item:  ");
@@ -21,7 +20,7 @@ n \n9. Quit");
 				scanf("%f", &A[i]);
 			printf("Value: %.2f\n", plus(A, n));
 		}	
-		case 2;
+		case 2:
 		{
 			printf("Input amout of numbers: ");
 			scanf("%d", &n);
@@ -46,10 +45,10 @@ n \n9. Quit");
 			float a, b;
 			printf("Enter dividend and divisor: ");
 			scanf("%f %f", &a, &b);
-			if (div (a, b) == -1)
+			if (divid (a, b) == -1)
 				printf("Error");
 			else
-				printf("Value: %.2f\n", div(a, b));
+				printf("Value: %.2f\n", divid(a, b));
 		}
 		case 5:
 		{
@@ -70,7 +69,7 @@ n \n9. Quit");
 			printf("Enter the coefficients a, b, c: ");
 			scanf("%f", &a);
 			if (root(a) != -1){
-				printf("x = %.2f", root(a));
+				printf("x = %d", root(a));
 			}
 			else
 				printf("No root");
@@ -80,7 +79,7 @@ n \n9. Quit");
 			float x, y;
 			printf("Enter the number and extent: ");
 			scanf("%f %f", &x, &y);
-			printf("x^y = %.2f\n", exp(x,y));
+			printf("x^y = %.2f\n", expon(x,y));
 		}
 		}
 	}
