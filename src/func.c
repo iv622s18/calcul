@@ -16,8 +16,8 @@ float plus(float A[], int n)
 float minus(float A[], int n)
 {
 	int i;
-	float value = 0;
-	for (i = 0; i < n; i++)
+	float value = A[0];
+	for (i = 1; i < n; i++)
 		value -= A[i];
 	return value;
 }
@@ -31,7 +31,7 @@ float multi(float A[], int n)
 	return value;
 }
 
-float divid(float a, float b)
+float divis(float a, float b)
 {
 	float value;
 	if (b == 0)
@@ -65,69 +65,41 @@ int fact(int n)
 		return n*fact(n-1);
 }
 
-float trig(float var)
+float trig(int item, float var)
 {
-	int item;
-	printf("1. sin\n2. cos\n3. tan\n4. ctg\n5. arcsin\n6. arccos\n7. arctg\n8. arcctg");
-	scanf("%d", &item);
-	switch(item)
-	{
-		case 1:
+	switch (item) {
+	case 1:
+		return sin(var * Pi/180);
+	case 2:
+		return cos(var * Pi/180);
+	case 3:
+		if (var == 90 || var == 270)
 		{
-			return sin(var * Pi/180);
-			break;
+			return -1;
 		}
-		case 2:
+		else
 		{
-			return cos(var * Pi/180);
-			break;
+			return tan(var * Pi/180);
 		}
-		case 3:
+	case 4:
+		if (var == 0 || var == 180 || var == 360)
 		{
-			if (var == 90 || var == 270)
-			{
-				return 0;
-				break;
-			}
-			else
-			{
-				return tan(var * Pi/180);
-				break;
-			}
+			return -1;
 		}
-		case 4:
+		else
 		{
-			if (var == 0 || var == 180 || var == 360)
-			{
-				return 0;
-				break;
-			}
-			else
-			{
-				return 1/tan(var * Pi/180);
-				break;
-			}
+			return 1/tan(var * Pi/180);
 		}
-		case 5:
-		{
-			return asin(var) * 180/Pi;
-			break;
-		}
-		case 6:
-		{
-			return acos(var) * 180/Pi;
-			break;
-		}
-		case 7:
-		{
-			return atan(var) * 180/Pi;
-			break;
-		}
-		case 8:
-		{
-			return (Pi/2 - atan(var)) * 180/Pi;
-		}
-		default: return 0;
+	case 5:
+		return asin(var) * 180/Pi;
+	case 6:
+		return acos(var) * 180/Pi;
+	case 7:
+		return atan(var) * 180/Pi;
+	case 8:
+		return (Pi/2 - atan(var)) * 180/Pi;
+	default:
+		return 0;
 	}
 }
 
