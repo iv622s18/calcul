@@ -18,7 +18,7 @@ int main()
 			printf("Enter numbers: ");
 			for (i = 0; i < n; i++)
 				scanf("%f", &A[i]);
-			printf("Value: %.2f\n", plus(A, n));
+			printf("Value: %.4f\n", plus(A, n));
 		}
 		break;
 		case 2:
@@ -29,7 +29,7 @@ int main()
 			printf("Enter numbers: ");
 			for (i = 0; i < n; i++)
 				scanf("%f", &A[i]);
-			printf("Value: %.2f\n", minus(A, n));
+			printf("Value: %.4f\n", minus(A, n));
 		}
 		break;
 		case 3:
@@ -40,7 +40,7 @@ int main()
 			printf("Enter numbers: ");
 			for (i = 0; i < n; i++)
 				scanf("%f", &A[i]);
-			printf("Value: %.2f\n", multi(A, n));
+			printf("Value: %.4f\n", multi(A, n));
 		}
 		break;
 		case 4:
@@ -50,7 +50,7 @@ int main()
 			scanf("%f %f", &a, &b);
 			f = divis(a, b, &c);
 			if(f == 0){
-				printf("Value: %.2f\n", c);
+				printf("Value: %.4f\n", c);
 			}
 			else{
 				printf("Invalid value");
@@ -71,7 +71,7 @@ int main()
 				printf("Invalid value of angle");
 			}
 			else{
-				printf("%.3f\n", trig(item, angle));
+				printf("%.4f\n", trig(item, angle));
 			}
 		}
 		break;
@@ -99,7 +99,7 @@ int main()
 			float x, y;
 			printf("Enter the number and extent: ");
 			scanf("%f %f", &x, &y);
-			printf("x^y = %.2f\n", expon(x,y));
+			printf("x^y = %.4f\n", expon(x,y));
 		}
 		default:
 			break;

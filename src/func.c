@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "func.h"
-#define Pi 3.14
+#define Pi 3.1415926535
 
 float plus(float A[], int n)
 {
@@ -68,7 +68,7 @@ float trig(int item, float var)
 {
 	switch (item) {
 	case 1:
-		return sin(var * Pi/180);
+		return sin(var * M_PI/180);
 	case 2:
 		return cos(var * Pi/180);
 	case 3:
