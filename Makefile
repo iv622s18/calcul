@@ -46,3 +46,4 @@ $(DUT)/$(EXECUTABLE_TEST): $(DIT)/main.o $(DIT)/calc_test.o $(DIT)/validation_te
 
 .PHONY : clean
 clean:
+	rm -rf build/ bin/
