@@ -1,13 +1,6 @@
 #include <ctest.h>
 #include "func.h"
 
-CTEST(check_input_data, division)
-{
-	const float result = divis(123, 0);
-	const float expected = -1;
-	ASSERT_EQUAL(expected, result);
-}
-
 CTEST(check_input_data, root)
 {
 	float result = root(-100);

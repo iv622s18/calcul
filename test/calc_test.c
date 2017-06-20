@@ -57,16 +57,19 @@ CTEST (operation, multi)
 
 CTEST (operation, divis)
 {
-
-    float result = divis(10,5); 
+	float c;
+	divis(10, 5, &c);
+    float result = c;
     float expected = 2; 
     ASSERT_EQUAL(expected, result);
-
-    result = divis(-12,5); 
+	
+	divis(-12, 5, &c);
+    result = c;
     expected = -2.4; 
     ASSERT_EQUAL(expected, result);
 
-    result = divis(-81,-9); 
+	divis(-81, -9, &c);
+    result = c;
     expected = 9; 
     ASSERT_EQUAL(expected, result);
 }

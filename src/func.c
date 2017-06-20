@@ -31,15 +31,14 @@ float multi(float A[], int n)
 	return value;
 }
 
-float divis(float a, float b)
+float divis(float a, float b, float *c)
 {
-	float value;
 	if (b == 0)
 		return -1;
 	else
 	{
-		value = a / b;
-		return value;
+		*c = a / b;
+		return 0;
 	}
 }
 

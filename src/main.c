@@ -6,7 +6,7 @@ int main()
 	int i, n, item;
 	while (item != 9) {
 	printf("Calculator menu\n");
-	printf("1. Plus\n2.Minus\n3.Multiplication\n4.Division\n5.Trigonometry\n6.Factorial \n7.Root\n8.Exponentation\n9. Quit");
+	printf("1.Plus\n2.Minus\n3.Multiplication\n4.Division\n5.Trigonometry\n6.Factorial \n7.Root\n8.Exponentation\n9. Quit");
 		printf("\nInput item:  ");
 		scanf("%d", &item);
 		switch (item) {
@@ -45,13 +45,16 @@ int main()
 		break;
 		case 4:
 		{
-			float a, b;
+			float a, b, c, f;
 			printf("Enter dividend and divisor: ");
 			scanf("%f %f", &a, &b);
-			if (divis(a, b) == -1)
-				printf("Error");
-			else
-				printf("Value: %.2f\n", divis(a, b));
+			f = divis(a, b, &c);
+			if(f == 0){
+				printf("Value: %.2f\n", c);
+			}
+			else{
+				printf("Invalid value");
+			}
 		}
 		break;
 		case 5:
@@ -88,7 +91,7 @@ int main()
 				printf("Root = %d", root(a));
 			}
 			else
-				printf("No root");
+				printf("Negative value");
 		}
 		break;
 		case 8:
