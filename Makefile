@@ -40,7 +40,7 @@ $(DIT)/validation_test.o: $(DAT)/validation_test.c
 	$(CC) $(CFLAGS) -c $(DAT)/validation_test.c -o $(DIT)/validation_test.o
 
 $(DUT)/$(EXECUTABLE_TEST): $(DIT)/main.o $(DIT)/calc_test.o $(DIT)/validation_test.o $(DIR)/func.o
-	@if [ ! -d $(DUT) ] ; then echo "creating $(DUT)" ; mkdir bin; mkdir bin/test; fi
+	@if [ ! -d $(DUT) ] ; then echo "creating $(DUT)" ; mkdir -p bin; mkdir -p bin/test; fi
 	$(CC) $(DIT)/main.o $(DIT)/calc_test.o $(DIT)/validation_test.o $(DIR)/func.o -o $(DUT)/$(EXECUTABLE_TEST) -lm
 
 .PHONY : clean
