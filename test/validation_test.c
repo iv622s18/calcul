@@ -1,7 +1,7 @@
 #include <ctest.h>
 #include "func.h"
 
-CTEST(check__input_data, division)
+CTEST(check_input_data, division)
 {
 	const float result = divis(123, 0);
 	const float expected = -1;
